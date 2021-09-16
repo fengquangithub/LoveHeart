@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Document</title>
+    <style>
+        *{
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        html,body{
+            margin: 0;
+            padding: 0;
+            background: #0e141b;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei";
+        }
+        .wrapper{
+            position: relative;
+            height: 100%;
+        }
+
+        .button{
+            padding: 0;
+            transition: transform 250ms ease 0s;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .text{
+            color: rgb(255, 10, 120);
+            font-size: 60px;
+            padding-left: 42px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-65%,-250%);
+        }
+
+        svg,
+        svg g,
+        svg polygon{
+            transition: transform 250ms ease 0s;
+        }
+
+        #flowers{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #flowers img{
+            position: absolute;
+            animation:flower 1.5s ease;
+            animation-fill-mode:forwards;
+        }
+
+        @keyframes flower {
+            from{
+                opacity: 1;
+                transform: rotate(-360deg);
+            }
+            to{
+                opacity: 0;
+                transform: rotate(0deg);
+            }
+        }
+
+        .label{
+            font-size: 22px;
+            position: absolute;
+            right: -15px;
+            top: 0;
+            animation: label .3s ease;
+            animation-fill-mode:forwards;
+            color: #757f8a;
+        }
+
+        @keyframes label {
+            from{
+                opacity: 1;
+                transform: translateY(-12px);
+            }
+            to{
+                opacity: 0;
+                transform: translateY(-24px);
+            }
+        }
+
+        @keyframes message {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+
+        h1{
+            color: #757f8a;
+            position: absolute;
+            bottom: 20%;
+            font-weight: lighter;
+            letter-spacing: 10px;
+            text-align: center;
+            animation: message .3s ease;
+            width: 100%;
+        }
+
+        h1.full{
+            color: rgb(255, 10, 120);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="flowers"></div>
+        <button class="button">
+            <svg width="208"
+                height="200.32" viewBox="0 0 50 42" fill="none" style="transform: rotate(0deg);">
+                <defs>
+                    <linearGradient id="active-gradient-gvbj" x1="25" y1="42" x2="26.3796" y2="0.0453673"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="hsl(353deg, 100%, 52%)"></stop>
+                        <stop offset="1" stop-color="hsl(313deg, 100%, 52%)"></stop>
+                    </linearGradient>
+                    <linearGradient id="inactive-gradient-gvbj" x1="15" y1="41" x2="42" y2="-1.5"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#666" stop-opacity="0.4"></stop>
+                        <stop offset="1" stop-color="#AAA" stop-opacity="0.4"></stop>
+                    </linearGradient>
+                </defs>
+                <mask id="like-button-mask-gvbj" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="50"
+                    height="42">
+                    <path
+                        d="M13.2537 0.0255029C23.4033 0.0255029 25.0273 10.5191 25.0273 10.5191C25.0273 10.5191 26.6512 -0.60088 37.6129 0.0255029C44.3441 0.410148 48.7484 6.32169 48.9804 12.1981C49.7924 32.7656 28.7678 41.5 25.0273 41.5C21.2868 41.5 -0.549833 32.3459 1.07416 12.1981C1.54782 6.32169 6.29929 0.0255029 13.2537 0.0255029Z"
+                        fill="#000000"></path>
+                </mask>
+                <mask id="active-gradient-mask-gvbj" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="50"
+                    height="42">
+                    <polygon points="
+                        0,42
+                        50,42
+                        50,45
+                        0,45
+                    " fill="#000000"></polygon>
+                </mask>
+                <g mask="url(#like-button-mask-gvbj)">
+                    <path
+                        d="M13.2537 0.0255029C23.4033 0.0255029 25.0273 10.5191 25.0273 10.5191C25.0273 10.5191 26.6512 -0.60088 37.6129 0.0255029C44.3441 0.410148 48.7484 6.32169 48.9804 12.1981C49.7924 32.7656 28.7678 41.5 25.0273 41.5C21.2868 41.5 -0.549833 32.3459 1.07416 12.1981C1.54782 6.32169 6.29929 0.0255029 13.2537 0.0255029Z"
+                        fill="url(#inactive-gradient-gvbj)"></path>
+                    <g mask="url(#active-gradient-mask-gvbj)">
+                        <path
+                            d="M13.2537 0.0255029C23.4033 0.0255029 25.0273 10.5191 25.0273 10.5191C25.0273 10.5191 26.6512 -0.60088 37.6129 0.0255029C44.3441 0.410148 48.7484 6.32169 48.9804 12.1981C49.7924 32.7656 28.7678 41.5 25.0273 41.5C21.2868 41.5 -0.549833 32.3459 1.07416 12.1981C1.54782 6.32169 6.29929 0.0255029 13.2537 0.0255029Z"
+                            fill="url(#active-gradient-gvbj)"></path>
+                    </g>
+                    <g style="opacity: 1;" id="eye">
+                        <circle cx="15" cy="22" r="2" fill="#000000" fill-opacity="0.4"></circle>
+                        <circle cx="35" cy="22" r="2" fill="#000000" fill-opacity="0.4"></circle>
+                    </g>
+                    <g style="opacity: 0;" id="bigeye">
+                        <path d="M 13 23 Q 15 19, 17 23 " stroke="#000000" stroke-opacity="0.4" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        <path d="M 33 23 Q 35 19, 37 23 " stroke="#000000" stroke-opacity="0.4" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </g>
+                    <g>
+                        <mask id="tongue-mask" mask-type="alpha" maskUnits="userSpaceOnUse" x="20" y="27" width="11"
+                            height="6">
+                            <path
+                                d="M28.3333 27H21.6666C21.6666 27 20.0001 27 20 29C19.9999 31 22.3875 33 25 33C27.6125 33 30 31 30 29C30 27 28.3333 27 28.3333 27Z"
+                                fill="#000000" fill-opacity="0.4"></path>
+                        </mask>
+                        <g mask="url(#tongue-mask)" style="opacity: 0;" id="bigmouth">
+                            <path
+                                d="M28.3333 27H21.6666C21.6666 27 20.0001 27 20 29C19.9999 31 22.3875 33 25 33C27.6125 33 30 31 30 29C30 27 28.3333 27 28.3333 27Z"
+                                fill="#000000" fill-opacity="1"></path>
+                            <circle cx="25" cy="35" r="5" fill="#DB2C49" fill-opacity="0.5"></circle>
+                        </g>
+                        <path id="mouth" d="
+                            M 20 30
+                            Q 25 25.2 30 30
+                        " stroke="#000000" stroke-opacity="0.4" stroke-linecap="round" style="opacity: 1;"></path>
+                    </g>
+                    <g>
+                        <path
+                            d="M53.5 18.5L47 5C47 5 53.5 31.9722 24.5 36C-4.5 40.0278 1 1.5 1 1.5L-6.5 25L8.00002 44.5L15.5 52L39 49L53.5 18.5Z"
+                            fill="black" fill-opacity="0.1"></path>
+                        <path
+                            d="M6.14471 8.44525C6.64924 7.12038 7.41962 5.99208 8.36394 5.15003C9.30652 4.30953 10.3901 3.78182 11.5089 3.58622"
+                            stroke="white" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path d="M31.7084 5.95975C32.7822 4.70067 34.1021 3.81419 35.484 3.37609" stroke="white"
+                            stroke-opacity="0.45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+        </button>
+        <div class="text-wrapper">
+            <span class="text" id="textWrap">
+                <span id="text">89</span>
+            </span>
+        </div>
+        
+    </div>
+    <script src="./tween.js"></script>
+    <script src="./animation.js"></script>
+    <script>
+        let halfwidth = window.innerWidth/2
+        let svg = document.getElementsByTagName('svg')[0]
+        let face = svg.getElementsByTagName('g')[0].children[1]
+        let clicknum = 15
+        let facered = 45
+        let heart_mask = document.getElementById('active-gradient-mask-gvbj').children[0]
+        let mouth = document.getElementById('mouth')
+        let bigmouth = document.getElementById('bigmouth')
+        let eye = document.getElementById('eye')
+        let bigeye = document.getElementById('bigeye')
+        let text = document.getElementById('text')
+        let flowers = document.getElementById('flowers')
+        let heartval = 89
+
+        let timer = null
+        let labelNode = null
+        let h1Node = null
+        let message = ['加油','请对我好一点','我最爱你','我最疼你','我想你','我很宠你','我很爱你','请多爱我一点','再多爱点','还差一点点','嘿嘿']
+
+        document.addEventListener('touchmove',(e)=>{
+            if((e.pageX - halfwidth) > 0){
+                // 左边
+                svg.style.transform = 'rotate(-8deg)'
+            }else{
+                // 右边
+                svg.style.transform = 'rotate(8deg)'
+            }
+        })
+
+        svg.addEventListener('click',()=>{
+            if(heartval<100){
+
+                mouth.style.opacity = 1
+                bigmouth.style.opacity = 0
+                eye.style.opacity = 1
+                bigeye.style.opacity = 0
+
+                let oldval = facered
+                facered -= clicknum
+                clicknum-=5
+                clicknum = Math.max(clicknum,2)
+
+                changeMouth()
+                
+                Math.animation(oldval, facered, 300,'Quad.easeOut', (val)=>{
+                    heart_mask.setAttribute('points',`0,42 50,42 50,${val} 0,${val}`)
+                });
+                
+                heartval++
+                text.innerText = heartval
+                labelNode && labelNode.remove()
+                labelNode = document.createElement('div')
+                labelNode.className = 'label'
+                labelNode.innerText = '+1'
+                document.getElementById('textWrap').appendChild(labelNode)
+
+                h1Node && h1Node.remove()
+                h1Node = document.createElement('h1')
+                h1Node.innerText = message.shift()
+                document.body.appendChild(h1Node)
+            }else{
+                clicknum = 15
+                facered = 45
+
+                mouth.style.opacity = 0
+                bigmouth.style.opacity = 1
+                eye.style.opacity = 0
+                bigeye.style.opacity = 1
+                if(!timer){
+                    Array(15).fill('').map((d,i)=>{
+                        let img =  document.createElement('img')
+                        img.src = `imgs/${i%7+1}.svg`
+                        let left = Math.random()*310-10
+                        let top = Math.random()*310-10
+                        Math.animation(150, left, 300,'Quad.easeOut', (val)=>{
+                            img.style.left = val+'px'
+                        });
+                        Math.animation(150, top, 300,'Quad.easeOut', (val)=>{
+                            img.style.top = val+'px'
+                        });
+                        
+                        flowers.appendChild(img)
+                    })
+                }
+                clearTimeout(timer)
+                timer = setTimeout(()=>{
+                    flowers.innerHTML = ''
+                    timer = null
+                },1500)
+
+                h1Node && h1Node.remove()
+                h1Node = document.createElement('h1')
+                h1Node.className = 'full'
+                h1Node.innerText = '我爱你'
+                document.body.appendChild(h1Node)
+            }
+            
+
+        })
+
+        document.addEventListener('touchstart',()=>{
+            svg.style.transform='scale(1.1)'
+        })
+
+        document.addEventListener('touchend',()=>{
+            svg.style.transform='scale(1)'
+        })
+
+        svg.addEventListener('contextmenu',(e)=>{
+            facered -= clicknum
+            clicknum-=5
+
+            mouth.setAttribute('d','M 20 30 Q 25 25.2 30 30')
+
+            heart_mask.setAttribute('points',`0,42 50,42 50,${facered} 0,${facered}`)
+            
+            e.preventDefault()
+        })
+
+        function changeMouth(){
+            if(facered<45){
+                mouth.setAttribute('d','M 20 30 Q 25 33.6 30 30')
+            }else{
+                mouth.setAttribute('d','M 20 30 Q 25 25.2 30 30')
+            }
+        }
+
+        function easeOutQuad(pos){
+            return -(Math.pow((pos-1), 2) -1);
+        }
+
+        document.documentElement.addEventListener('touchstart', function (event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, {passive:false});
+    </script>
+</body>
+
+</html>
